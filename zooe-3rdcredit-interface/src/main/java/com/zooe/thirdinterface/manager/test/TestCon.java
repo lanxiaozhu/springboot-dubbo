@@ -1,9 +1,12 @@
-package com.zooe.thirdinterface.manager;
+package com.zooe.thirdinterface.manager.test;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.zooe.thirdapi.service.test.DemoService;
+import com.zooe.thirdcommon.domain.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * @Auther: wishm
@@ -22,7 +25,7 @@ public class TestCon {
     private DemoService demoService;
 
     @GetMapping("/getDuboo")
-    public String getDuboo(){
+    public List<User> getDuboo(){
         return demoService.demoHello();
     }
 }

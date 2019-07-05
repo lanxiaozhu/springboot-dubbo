@@ -28,6 +28,7 @@
             <!--默认compile  项目在编译，测试，运行阶段都需要这个artifact(模块)-->
             <scope>compile</scope>
         </dependency>
+
     </dependencies>
 
     <build>

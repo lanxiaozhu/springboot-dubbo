@@ -13,6 +13,8 @@
         <module>zooe-3rdcredit-api</module>
         <!--提供者-->
         <module>zooe-3rdcredit-core</module>
+        <!--公共-->
+        <module>zooe-3rdcredit-common</module>
     </modules>
 
 
@@ -22,20 +24,27 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.1.0.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
 
 
     <properties>
+        <!--基础-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <curator-framework.version>4.0.1</curator-framework.version>
-        <zookeeper.version>3.4.13</zookeeper.version>
-        <dubbo.starter.version>0.2.0</dubbo.starter.version>
+        <!--dubbo-->
+        <alibaba.dubbo.version>2.5.7</alibaba.dubbo.version>
+        <zookeeper.version>3.4.8</zookeeper.version>
+        <zkclient.version>0.1</zkclient.version>
 
-        <dubbo.version>2.5.5</dubbo.version>
-        <zkclient.version>0.10</zkclient.version>
+
+        <!--manage-->
+        <fastJson>1.2.51</fastJson>
+        <commons.version>2.6</commons.version>
+        <pagehelper.version>5.1.2</pagehelper.version>
+        <pagehelper-springboot.version>1.2.5</pagehelper-springboot.version>
+        <okhttp.version>3.7.0</okhttp.version>
     </properties>
 
 
@@ -43,20 +52,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <!-- Dubbo依赖 -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>dubbo</artifactId>
-            <version>${dubbo.version}</version>
-        </dependency>
-
-        <!-- zookeeper的客户端依赖-->
-        <dependency>
-            <groupId>com.101tec</groupId>
-            <artifactId>zkclient</artifactId>
-            <version>${zkclient.version}</version>
         </dependency>
 
         <dependency>
@@ -67,9 +62,64 @@
 
 
 
+        <!--引入dubbot-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>${alibaba.dubbo.version}</version>
+        </dependency>
+        <!--引入zookeeper-->
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>${zookeeper.version}</version>
+        </dependency>
+        <!--引入zookeeper客户端-->
+        <dependency>
+            <groupId>com.github.sgroschupf</groupId>
+            <artifactId>zkclient</artifactId>
+            <version>${zkclient.version}</version>
+        </dependency>
 
     </dependencies>
 
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastJson}</version>
+            </dependency>
+
+            <!-- StringUtils  -->
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${commons.version}</version>
+            </dependency>
+            <!--分页插件 begin-->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper</artifactId>
+                <version>${pagehelper.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-autoconfigure</artifactId>
+                <version>${pagehelper-springboot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper-springboot.version}</version>
+            </dependency>
+            <!--分页插件 end-->
+
+
+        </dependencies>
+    </dependencyManagement>
 
 
     <build>
