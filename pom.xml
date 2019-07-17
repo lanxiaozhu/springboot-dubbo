@@ -8,7 +8,7 @@
     <artifactId>zooe-3rdcredit</artifactId>
     <modules>
         <!--消息消费端-->
-        <module>zooe-3rdcredit-interface</module>
+        <module>zooe-3rdcredit-gateway</module>
         <!--中间层-->
         <module>zooe-3rdcredit-api</module>
         <!--提供者-->
