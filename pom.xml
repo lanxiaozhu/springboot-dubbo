@@ -34,7 +34,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <!--dubbo-->
-        <alibaba.dubbo.version>2.5.7</alibaba.dubbo.version>
+        <alibaba.dubbo.version>2.6.12</alibaba.dubbo.version>
         <zookeeper.version>3.4.8</zookeeper.version>
         <zkclient.version>0.1</zkclient.version>
 
